@@ -1,0 +1,24 @@
+2.
+a)
+	(a) 	0xF0 + 0x27 = 0x117
+		-> t4: 0x117
+	(b)	t0: 0x08BB55AA
+		Speicherzugriff: 0x0100
+	(c)	a3: 0x0A
+		Speicherzugriff: 0x0109
+	(d)	260 in Hexadezimal: 0x104 
+		-> t3: 0x112A0015	
+		Speicherzugriff: 0x104 
+	(e)	0x20 + 0xF0 = 0x110
+		a1 : 0xFF
+		Speicherzugriff: 0x110
+	(f)	-1 + 0x104 = 0x103
+		s3: 0xFFFFFFAA
+		Speicherzugriff: 0x103
+	(g)	a4: 1, da Inhalt von t1 kleiner als Inhalt von a2
+
+b)
+	a1: 0xFFFFFFFF = -1
+	s3: 0xFFFFFFAA = -86
+
+		

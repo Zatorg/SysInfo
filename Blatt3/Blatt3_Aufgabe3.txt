@@ -1,0 +1,44 @@
+		.data
+buf:            .space 10
+                .align 2
+const1e9:       .word 1000000000
+
+
+		.text
+main:                                   
+
+# Zeichenkette einlesen
+	add     a0, zero, 0             
+	add     a1, zero, buf           
+	add     a2, zero, 10            
+	add     a7, zero, 63            
+   	scall
+        nop                             
+        nop
+        nop
+
+	add t1, zero, buf	# Zählvariable
+	add t3, zero, 97	# ASCII-Wert für 'a'
+	add t4, zero, 122	# ASCII-Wert für 'z'
+Loop:
+	lb t5, 0(t1)		# lädt ein Zeichen
+	beq t5, zero, Exit
+	blt t5, t3, nichtKlein	
+	blt t4, t6, nichtKlein
+	add t5, t5, -32		# macht Kleinbuchstaben groß
+	sb t5, 0(t1)		# Buchstaben ersetzen
+nichtKlein:
+	add t1, t1, 1
+	j Loop
+Exit:
+# String ausgeben
+        add     a2, zero, a0            
+        add     a0, zero, 1             
+        add     a1, zero, buf           
+        add     a7, zero, 64            
+        scall
+
+# Programm beenden
+        add     a0, zero, 0             
+        add     a7, zero, 93            
+        scall

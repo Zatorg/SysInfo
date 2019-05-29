@@ -1,0 +1,37 @@
+		.data 0x300
+
+Zahl:		.word 6
+
+		.align 2
+
+
+		.text
+
+main:
+
+		lw t0, Zahl(zero)
+
+		add t1, t0, zero	# Kopie der Zahl
+
+		add t2, zero, 1		# 1 zum Subtrahieren
+
+loop:
+
+	
+	add t3, t3, t0		# Ergebnis steht in t3
+
+		sub t1, t1, t2		# 1 abziehen
+
+		beq t1, zero, exit
+
+		j loop
+
+exit:
+
+		sw t3, 0x304(zero)
+
+		add a0, zero, 0
+
+		add a7, zero, 93
+
+		scall

@@ -1,7 +1,7 @@
 	.text
 main:
 add		t6, zero, 14
-add     	t1, zero, 0x200			# Speicheradresse beginn
+add     t1, zero, 0x200			# Speicheradresse beginn
 add		t2, zero, 2			# Iteration Nummer
 add		t3, zero, 1			# F1 init
 add		t4, zero, 1			# F2 init
